@@ -1,0 +1,9 @@
+const swiper = new Swiper(".mySwiper", {
+    effect: "cards",
+    grabCursor: true,
+
+    flipEffect: {
+        slideShadows: true,
+        limitRotation: true,
+    },
+});

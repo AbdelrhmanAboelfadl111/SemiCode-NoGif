@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>SemiCode Plugins - Best Web Development Libraries & Tools</title>
+    <meta name="description"
+        content="Discover and browse the best web development plugins, libraries, and tools hand-picked by SemiCode Academy. Filter by category including icons, animations, charts, sliders, forms, and more — all in one place for developers.">
+    <meta name="keywords"
+        content="SemiCode, SemiCode Academy, Web Plugins, JavaScript Libraries, CSS Tools, UI Components, Web Development Tools, Icons Library, Animation Library, Charts Library, Sliders Plugin, Forms Plugin, Developer Tools, Frontend Plugins, Backend Tools, Bootstrap Plugins, Tailwind Plugins, React Libraries, Vue Libraries, Angular Libraries, jQuery Plugins, GSAP Animation, Swiper Slider, Chart.js, Font Awesome, web components, open source libraries, free developer tools, coding resources, SemiCode Plugins, web design tools, CSS animations, scroll animations, form validation, date picker, modal plugin, tooltip plugin, notification plugin, lazy loading, image gallery, lightbox plugin, video player, rich text editor, data table plugin, progress bar, loading spinner, color picker, drag and drop, infinite scroll">
+    <meta name="author" content="Mohamed Atya">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2e295e">
+    <link rel="canonical" href="https://semicode.tech/plugins.html">
+
+    <!-- Open Graph — واتساب / فيسبوك -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://semicode.tech/plugins.html">
+    <meta property="og:title" content="SemiCode Plugins - Best Web Development Libraries & Tools">
+    <meta property="og:description"
+        content="Discover and browse the best web development plugins, libraries, and tools hand-picked by SemiCode Academy — all in one place for developers.">
+    <meta property="og:image" content="https://semicode.tech/imgs/mini-logo-with-name.png">
+    <meta property="og:site_name" content="SemiCode Academy">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SemiCode Plugins - Best Web Development Libraries & Tools">
+    <meta name="twitter:description"
+        content="Browse the best web development plugins and libraries hand-picked by SemiCode Academy.">
+    <meta name="twitter:image" content="https://semicode.tech/imgs/mini-logo-with-name.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="imgs/mini-logo-with-name.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imgs/mini-logo-with-name.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/plugins/fonts.css">
+    <link rel="stylesheet" href="css/plugins/all.min.css">
+    <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sc-overlay" id="sc-overlay">
+
+        <div class="sc-card" id="sc-card">
+
+            <!-- Logo -->
+            <div class="sc-logo-wrap">
+                <div class="sc-logo-ring"></div>
+                <div class="sc-logo-circle">
+                    <img src="imgs/logoSemiCode.png" alt="SemiCode logo" id="loaderImg" />
+                    <div class="sc-logo-fallback">
+                        <span class="br">{</span>
+                        <span class="mid">SC</span>
+                        <span class="br">}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="sc-name">SemiCode</div>
+            <div class="sc-sub">Plugins</div>
+
+            <!-- Progress -->
+            <div class="sc-progress-wrap">
+                <div class="sc-progress-meta">
+                    <span class="sc-pct-label">Loading</span>
+                    <span class="sc-pct-val" id="sc-pct">0%</span>
+                </div>
+                <div class="sc-track">
+                    <div class="sc-fill" id="sc-fill"></div>
+                </div>
+                <div class="sc-steps" id="sc-steps"></div>
+            </div>
+
+            <!-- Status message -->
+            <div class="sc-status-msg" id="sc-msg">Initializing...</div>
+
+
+        </div>
+    </div>
+
+    <header class="d-flex flex-column" id="PluginHeader">
+        <nav class="navbar navbar-expand-md">
+            <div class="container nav-content">
+                <img src="imgs/plugins/plugins-icons/" alt="">
+                <img src="imgs/plugins/sidebar-icons/" alt="">
+
+
+                <a class="navbar-brand" href="index.html">
+                    <img src="imgs/logoSemiCode.png" alt="SemiCode.tech semiCode.tech logo semiCode SemiCode"
+                        class="img-fluid">
+                    <h4 class="mb-0 ms-1">SemiCode</h4>
+                    <span class="navbar-brand__divider"></span>
+                    <span class="navbar-brand__page">Plugins</span>
+                </a>
+
+                <button class="navbar-toggler" id="navToggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <div class="item ms-auto">
+                        <form class="d-flex justify-content-center align-items-center" role="search">
+                            <input class="form-control" type="search" name="q" placeholder="Search plugins..."
+                                aria-label="Search plugins" autocomplete="off" />
+                            <img src="imgs/plugins/medicaments.gif" alt="Search" class="search-icon">
+                        </form>
+                    </div>
+
+                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-evenly">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="plugins.html">Plugins</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <main class=" container-fluid">
+            <div class="row row-container">
+                <aside class="sidebar is-closed" id="sidebar">
+                    <div class="sidebar__inner">
+                        <div class="sidebar__top d-none d-md-block">
+                            <div class="sidebar__brand">
+                                <button class="sidebar__toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+                                    <span class="sidebar__toggle-lines">
+                                        <div class="sidebar__toggle-line"></div>
+                                    </span>
+                                </button>
+
+                                <div class="sidebar__brand-text">
+                                    <h2>Plugins Category</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav class="sidebar__nav" id="sidebar__nav">
+
+                        </nav>
+                    </div>
+                </aside>
+
+                <section class="plugins-row d-flex justify-content-center align-items-center" id="plugins-row">
+                    <div class="cover" id="pluginsScrollContainer">
+                        <div class="container-fluid d-flex justify-content-center" id="pluginsSection">
+                            <div class="row" id="pluginsContainer">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </header>
+
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/data/plugins.js"></script>
+    <script src="js/plugins/using_Plugins.js"></script>
+    <script src="js/pages/loader.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/pages/pluginsPgae.js"></script>
+</body>
+
+</html>

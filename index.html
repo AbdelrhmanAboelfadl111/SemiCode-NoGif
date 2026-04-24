@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>SemiCode - Learn Web Development by Building Real Projects</title>
+    <meta name="description"
+        content="SemiCode Academy is a developer-focused platform that teaches Frontend, Backend, and Full-Stack web development through real projects and practical experience. Learn HTML, CSS, JavaScript, React, Laravel, and more — designed for Arabic-speaking developers worldwide.">
+    <meta name="keywords"
+        content="SemiCode, SemiCode Academy, Web Course, Front-End Course, Back-End Course, Full-Stack Course, web development, programming courses, frontend development, backend development, full stack development, HTML course, CSS course, JavaScript course, React course, Laravel course, Node.js course, TypeScript course, SASS course, Bootstrap course, Tailwind course, Angular course, Vue.js course, PHP course, MySQL course, REST API course, Git course, Arabic programming, learn web development, Arabic developers, online coding course, programming for beginners, web design course, JavaScript ES6, OOP course, MVC course, Webpack course, jQuery course, Postman course, Vite course, Pusher course, Spring Boot course, Java course, ASP.NET course, C# course, SQL Server course, MongoDB course, Express.js course, web development Egypt, coding platform Arabic, SemiCode home, learn coding online, developer skills">
+    <meta name="author" content="Mohamed Atya">
+    <link rel="canonical" href="https://semicode.tech">
+
+    <!-- Open Graph — واتساب / فيسبوك -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://semicode.tech">
+    <meta property="og:title" content="SemiCode Academy - Learn Web Development by Building Real Projects">
+    <meta property="og:description"
+        content="SemiCode Academy is a developer-focused platform that teaches Frontend, Backend, and Full-Stack web development through real projects and practical experience — designed for Arabic-speaking developers worldwide.">
+    <meta property="og:image" content="https://semicode.tech/imgs/mini-logo-with-name.png">
+    <meta property="og:site_name" content="SemiCode Academy">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SemiCode Academy - Learn Web Development">
+    <meta name="twitter:description"
+        content="Frontend, Backend, and Full-Stack courses built around real projects — for Arabic-speaking developers worldwide.">
+    <meta name="twitter:image" content="https://semicode.tech/imgs/mini-logo-with-name.png">
+
+    <!-- Extra -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2e295e">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="imgs/mini-logo-with-name.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imgs/mini-logo-with-name.png">
+
+    <!-- styles ... -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/plugins/fonts.css">
+    <link rel="stylesheet" href="css/plugins/all.min.css">
+    <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sc-overlay" id="sc-overlay">
+
+        <div class="sc-card" id="sc-card">
+
+            <!-- Logo -->
+            <div class="sc-logo-wrap">
+                <div class="sc-logo-ring"></div>
+                <div class="sc-logo-circle">
+                    <img src="imgs/logoSemiCode.png" alt="SemiCode logo" id="loaderImg" />
+                    <div class="sc-logo-fallback">
+                        <span class="br">{</span>
+                        <span class="mid">SC</span>
+                        <span class="br">}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="sc-name">SemiCode</div>
+            <div class="sc-sub">Learn by building</div>
+
+            <!-- Progress -->
+            <div class="sc-progress-wrap">
+                <div class="sc-progress-meta">
+                    <span class="sc-pct-label">Loading</span>
+                    <span class="sc-pct-val" id="sc-pct">0%</span>
+                </div>
+                <div class="sc-track">
+                    <div class="sc-fill" id="sc-fill"></div>
+                </div>
+                <div class="sc-steps" id="sc-steps"></div>
+            </div>
+
+            <!-- Status message -->
+            <div class="sc-status-msg" id="sc-msg">Initializing...</div>
+
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md position-fixed top-0 start-0 w-100">
+        <div class="container nav-content">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="imgs/logoSemiCode.png" alt="SemiCode.tech semiCode.tech SemiCode semiCode logo"
+                    class="img-fluid">
+                <h4 class="mb-0 ms-1">SemiCode</h4>
+                <span class="navbar-brand__divider"></span>
+                <span class="navbar-brand__page">Home</span>
+            </a>
+
+            <button class="navbar-toggler" id="navToggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-evenly">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="plugins.html">Plugins</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://semicode.tech/support" target="_blank">
+        <div class="support">
+            <img src="imgs/home/icons/customer-service.gif" alt="support" loading="lazy">
+        </div>
+    </a>
+
+    <div class="scroll-indicator">
+        <div class="scroll-indicator__line"></div>
+        <div class="scroll-indicator__dot"></div>
+    </div>
+
+    <header class="home vh-100 d-flex justify-content-center align-items-center" id="Home">
+        <div id="particles-js"></div>
+        <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+            <div class="logoContainer d-flex flex-column justify-content-center align-items-center">
+                <img class="" src="imgs/logoSemiCode.png" alt="SemiCode.tech semiCode.tech SemiCode semiCode logo">
+                <h1>SemiCode</h1>
+            </div>
+            <div class="briefContainer">
+                <p>SemiCode is a Platform That Teaches Programming Through <br> Real projects, And Practical
+                    Experience.
+                </p>
+            </div>
+            <div class="buttonsContainer d-flex justify-content-center align-items-center">
+                <a href="#About"><button>About Us</button></a>
+                <a href="#About"><button>See More</button></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about bg-white py-5" id="About">
+        <div class="container base">
+            <div class="row row-1">
+                <div class="col-lg-7 part part-left">
+                    <div class="item">
+                        <div class="titleContainer">
+                            <img src="imgs/home/icons/about-us.png" alt="about us icon">
+                            <h2 class="title-section">About US</h2>
+                        </div>
+                        <p class="text-section mb-4">
+                            <span class="SemiCode">
+                                SemiCode
+                            </span> is a platform that helps developers learn and improve their skills in a simple and
+                            practical way. It
+                            provides clear explanations, real-world examples, and modern ideas that make complex
+                            concepts easier to understand and
+                            apply in real projects.
+                        </p>
+                        <div class="row row-2">
+                            <div class="box mb-3 col-12">
+                                <div class="item">
+                                    <div class="part part-top" data-img-src="imgs\home\about\Company-amico.svg">
+                                        <h4 class="question mb-0">Who US ?</h4>
+                                        <div class="icon">
+                                            <div class="arrow">
+                                                <i class="fa-solid fa-right-long"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="part part-bottom">
+                                        <div class="item">
+                                            <p class="mb-0">
+                                                <span class="SemiCode">
+                                                    SemiCode
+                                                </span> is a developer-focused platform built to make learning web
+                                                development
+                                                straightforward and practical. We break down complex topics into clear,
+                                                step-by-step content so you can build real projects with confidence.
+                                                Our goal is simple: help developers grow faster with better resources.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box mb-3 col-12">
+                                <div class="item">
+                                    <div class="part part-top" data-img-src="imgs\home\about\Seminar-amico.svg">
+                                        <h4 class="question mb-0">What the Courses ?</h4>
+                                        <div class="icon">
+                                            <div class="arrow">
+                                                <i class="fa-solid fa-right-long"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="part part-bottom">
+                                        <div class="item">
+                                            <p>
+                                                We offer a range of courses built around modern web technologies.
+                                                Each course is designed to take you from the basics to a real working
+                                                project.
+                                            </p>
+                                            <div class="row">
+                                                <div class="typeOfCourses changeActives my-3 col-12">
+                                                    <h6 class="typeOfCourse me-2 active" data-type="Frontend"
+                                                        onclick="changeCoursesContent('Frontend', this);changeActives(this)">
+                                                        <span>Frontend</span>
+                                                    </h6>
+                                                    <h6 class="typeOfCourse" data-type="Backend"
+                                                        onclick="changeCoursesContent('Backend', this);changeActives(this)">
+                                                        <span>Backend</span>
+                                                    </h6>
+                                                </div>
+                                                <div class="counter col-12">
+                                                    <ul type="none" id="dataInter">
+
+                                                    </ul>
+                                                    <a href="https://drive.google.com/file/d/1rs-3tc0LQYXjfGYlJFdyOoMlgdBgG0AP/view?usp=drivesdk"
+                                                        target="_blank" id="buttonRoadMap"
+                                                        class="travel-to-courses main-btn mt-2">
+                                                        <h6>See Road Map</h6>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box      col-12">
+                                <div class="item">
+                                    <div class="part part-top" data-img-src="imgs\home\about\Partnership-bro.svg">
+                                        <h4 class="question mb-0">What the Countries Visited ?</h4>
+                                        <div class="icon">
+                                            <div class="arrow">
+                                                <i class="fa-solid fa-right-long"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="part part-bottom">
+                                        <div class="item">
+                                            <p>
+                                                <span class="SemiCode">
+                                                    SemiCode
+                                                </span> has reached developers across multiple countries including
+                                                Egypt, Saudi Arabia, UAE, kauwit, and Oman.
+                                                Our content is built for Arabic-speaking developers worldwide,
+                                                with a focus on practical skills that apply anywhere in the world.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 part part-right d-none d-lg-flex">
+                    <div class="item">
+                        <img src="imgs/home/about/teamwork-concept-landing-page.png"
+                            data-default-src="imgs\home\about\teamwork-concept-landing-page.png" loading="eager" alt=""
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="FeedBack" class="feedBack py-5 overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6 column1">
+                    <div class="item d-flex flex-column justify-content-center align-items-start h-100">
+                        <div class="title">
+                            <div class="box d-flex align-items-center mb-3">
+                                <img src="imgs/home/icons/feedback-loop.gif" alt="feedback icon">
+                                <h3 class="mb-0">Feedback</h3>
+                            </div>
+                        </div>
+                        <p class="mb-3">We place great importance on your feedback as it plays a vital role in enhancing
+                            the quality of our
+                            services. Your
+                            insights, suggestions, and experiences help us better understand your needs and continuously
+                            refine what we offer.
+                            We
+                            are committed to listening, learning, and evolving to ensure we deliver the best possible
+                            experience.</p>
+                        <a href="https://semicode.tech/support" class="addFeedBack">
+                            <button class="support2"> <img src="imgs/home/icons/good-review.gif" alt="support icon">Add
+                                Feedback</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 column2 p-3">
+                    <div class="item">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="Footer" class="bg-white py-2">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="textContainer w-100 text-center">
+                <img src="imgs/logoSemiCode.png" alt="SemiCode.tech semiCode.tech SemiCode semiCode logo"
+                    loading="lazy">
+                <h5 class="mb-0">Copyright © 2026 by SemiCode</h5>
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup" data-name="imgShow" onclick="closePopup()">
+        <div class="box">
+            <img src="" alt="" class="img-fluid">
+        </div>
+    </div>
+
+    <script src="js/plugins/particles.min.js"></script>
+
+    <script src="js/plugins/app.particales.js"></script>
+
+    <script src="js/plugins/swiper-bundle.min.js"></script>
+    <script src="js/plugins/swiperActive.js"></script>
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/using_Plugins.js"></script>
+    <script src="js/pages/loader.js"></script>
+    <script src="js/data/dataCourse.js"></script>
+    <script src="js/data/feedBack.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/pages/home.js"></script>
+</body>
+
+</html>

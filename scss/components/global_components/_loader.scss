@@ -1,0 +1,341 @@
+@use "../../abstract/index" as *;
+// ==============================
+// SemiCode Loader — loader.scss
+// ==============================
+
+// ---- Tokens ----
+$purple : #534AB7;
+$green : #1D9E75;
+$bg-page : #f5f3ef;
+$bg-card : #ffffff;
+$bg-logo : #f0eeff;
+$text-dark : #1a1a2e;
+$text-muted: #B4B2A9;
+$text-sub : #888780;
+$border : rgba(0, 0, 0, 0.08);
+$step-off : #E8E6E0;
+$track-bg : #EEF0F2;
+$dot-color : #c8c5be;
+
+$font-sans : 'Inter',
+system-ui,
+sans-serif;
+$font-mono : 'Fira Code',
+'JetBrains Mono',
+monospace;
+
+// ---- Mixins ----
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// ---- Keyframes ----
+@keyframes sc-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sc-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ---- Overlay ----
+.sc-overlay {
+    width: 100%;
+    min-height: 100vh;
+    background: $bg-page;
+    @include center;
+    font-family: $font-sans;
+    position: fixed;
+    inset: 0;
+    z-index: 9999000;
+    overflow: hidden;
+
+    // Subtle radial blobs
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(circle at 20% 80%, rgba($purple, 0.07) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba($green, 0.06) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    // Dot grid 
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("../imgs/bg_2.jpg");
+        @include bgImage();
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    &.sc-hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+    }
+}
+
+// ---- Hide scrollbar while loading ----
+body.sc-loading {
+    overflow: hidden;
+}
+
+// ---- Card ----
+.sc-card {
+    position: relative;
+    z-index: 2;
+    background: $bg-card;
+    border-radius: 24px;
+    border: 0.5px solid $border;
+    padding: 44px 48px 40px;
+    width: 360px;
+    @include center;
+    flex-direction: column;
+    box-shadow: 0 2px 32px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+    animation: sc-fade-in 0.5s ease forwards;
+    @include respond(350){
+        width: 270px;
+    }
+    @include respond(450){
+        width: 350px;
+    }
+    .sc-name{
+        font-family: "Agency FB Bold" !important;
+        font-size: 30px;
+        color: #2E295E;
+    }
+    // .sc-sub{
+    //     font-family: "Agency FB Bold" !important;
+    // }
+    // Complete state
+    &.sc-complete {
+        .sc-name {
+            color: $green;
+        }
+
+        .sc-pct-val {
+            color: $green;
+        }
+    }
+}
+
+// ---- Logo ----
+.sc-logo-wrap {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    margin-bottom: 24px;
+}
+
+.sc-logo-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba($purple, 0.18);
+    animation: sc-spin 8s linear infinite;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $purple;
+    }
+}
+
+.sc-logo-circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, $bg-logo, #e8f4ff);
+    border: 0.5px solid rgba($purple, 0.15);
+    @include center;
+    overflow: hidden;
+
+    img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+    }
+
+    .sc-logo-fallback {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        font-family: $font-mono;
+        line-height: 1;
+
+        .br {
+            font-size: 28px;
+            font-weight: 700;
+            color: $purple;
+        }
+
+        .mid {
+            font-size: 11px;
+            color: $green;
+            letter-spacing: 1px;
+            margin: 1px 0;
+        }
+    }
+}
+
+// ---- Brand ----
+.sc-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: $text-dark;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    transition: color 0.4s ease;
+}
+
+.sc-sub {
+    font-size: 12px;
+    color: $text-sub;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+// ---- Progress ----
+.sc-progress-wrap {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.sc-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sc-pct-label {
+    font-size: 12px;
+    color: $text-muted;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sc-pct-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: $purple;
+    font-family: $font-mono;
+    min-width: 36px;
+    text-align: right;
+    transition: color 0.4s ease;
+}
+
+.sc-track {
+    width: 100%;
+    height: 5px;
+    background: $track-bg;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sc-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, $purple, $green);
+    transition: width 0.25s ease;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 32px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35));
+    }
+}
+
+// ---- Step dots ----
+.sc-steps {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.sc-step {
+    width: 28px;
+    height: 3px;
+    border-radius: 999px;
+    background: $step-off;
+    transition: background 0.3s ease;
+
+    &.on {
+        background: $purple;
+    }
+
+    &.done {
+        background: $green;
+    }
+}
+
+// ---- Status ----
+.sc-status-msg {
+    font-size: 11px;
+    color: $text-muted;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    min-height: 16px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+// ---- Replay button ----
+.sc-replay {
+    margin-top: 24px;
+    padding: 7px 20px;
+    font-size: 12px;
+    color: $purple;
+    border: 0.5px solid rgba($purple, 0.3);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    display: none;
+
+    &:hover {
+        background: rgba($purple, 0.06);
+    }
+
+    &.visible {
+        display: inline-block;
+    }
+}

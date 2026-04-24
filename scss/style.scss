@@ -1,0 +1,19 @@
+@use "abstract/index" as *;
+
+@use "components/global_components/navbar" as *;
+
+@use "components/global_components/popups" as *;
+
+@use "components/global_components/loader" as *;
+
+@use "components/home/header_home" as *;
+
+@use "components/home/about_home" as *;
+
+@use "components/home/feedBack_home" as *;
+
+@use "components/home/footer_home" as *;
+
+@use "components/plugins/pluginsSection" as *;
+
+@use "components/plugins/sideNavbar" as *;

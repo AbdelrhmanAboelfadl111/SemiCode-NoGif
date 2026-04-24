@@ -1,0 +1,26 @@
+/* ════════════════════════════════════════════════ Light Space — Inverted Color System Original dark gradient: #0f0c29 · #24243e · #302b63 ↓ Inverted: darks become accents, lights become bg ════════════════════════════════════════════════ */
+:root {
+    /* ── Backgrounds (light) ──────────── */
+    --bg-base: #ffffff; /* page bg, card surface */
+    --bg-soft: #f5f4fb; /* body bg — purple-tinted */
+    --bg-mist: #eceaf8; /* alt sections */
+    --bg-lavender: #e0ddf5; /* hero bg, stronger alt bg */ /* ── Borders & Dividers ───────────── */
+    --border-faint: #ece9f7; /* card outlines */
+    --border-soft: #d4d0ee; /* input borders, hover */
+    --border-mid: #b8b3e0; /* ghost btn, active border */ /* ── Text ─────────────────────────── */
+    --text-primary: #0f0c29; /* headings — void color */
+    --text-body: #24243e; /* body text — abyss color */
+    --text-secondary: #4b4690; /* labels, meta — violet */
+    --text-muted: #7b77b8; /* placeholder, faint text */ /* ── Accent / Interactive ─────────── */
+    --accent: #302b63; /* PRIMARY buttons, links */
+    --accent-hover: #3a3a64; /* button hover — abyss */
+    --accent-mid: #4b4690; /* ghost btn, secondary */
+    --accent-light: #9490d4; /* focus border, active nav */
+    --accent-tint: #eceaf8; /* badge bg, input focus bg */ /* ── Warm Accent ──────────────────── */
+    --gold: #c9a96e; /* ratings, highlights */
+    --gold-light: #f0ddb0; /* warm badge bg */
+    --main: #eceff1;
+    --secound: #191970;
+}
+
+$timer-hidden: 1s;

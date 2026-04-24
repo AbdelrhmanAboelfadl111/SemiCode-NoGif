@@ -1,0 +1,39 @@
+@use "../../abstract/index" as *;
+footer{
+    .container{
+        .textContainer{
+            @include flex($jc: center, $ai: center, $dir: row);
+            gap: 10px;
+            img{
+                width: 30px;
+            }
+            h5{
+                letter-spacing: .3px;
+                font-size: 20px;
+                color: #2E295E;
+            }
+        }
+        .mediaIcons{
+            ul{
+                margin: 0;
+                padding: 0;
+                @include flex($jc: center, $ai: center, $dir: row);
+                list-style: none;
+                gap: 20px;
+                a{
+                    &:hover{
+                        img{
+                            transform: scale(0.9);
+                        }
+                    }
+                    li{
+                        img{
+                            width: 25px;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

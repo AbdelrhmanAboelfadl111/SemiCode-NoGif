@@ -1,0 +1,391 @@
+@use "../../abstract/index" as *;
+
+#About {
+    position: relative;
+    .base {
+        .row-1 {
+            > .part {
+                &.part-left {
+                    @include flex;
+                    .item {
+                        .titleContainer {
+                            margin-bottom: 0.5rem;
+                            @include flex;
+                            justify-content: flex-start;
+                            gap: 10px;
+                            .title-section {
+                                color: #2e295e;
+                                font-size: 40px;
+                                font-weight: 500;
+                                margin-bottom: 0;
+                            }
+                            img {
+                                width: 60px;
+                            }
+                        }
+                        .text-section {
+                            color: rgb(123, 123, 123);
+                        }
+                        p {
+                            text-transform: capitalize;
+                        }
+                        .row-2 {
+                            .box {
+                                > .item {
+                                    .part {
+                                        &.part-top {
+                                            padding: 20px 20px 21px;
+
+                                            border-left: 8px solid #acacac;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            cursor: pointer;
+                                            position: relative;
+                                            transition-duration: 0.4s;
+                                            h4 {
+                                                color: #acacac !important;
+                                                font-weight: 400;
+                                                font-size: 22px;
+                                                transition-duration: 0.4s;
+                                                @include respond(350) {
+                                                    font-size: 18px !important;
+                                                }
+                                                @include respond(450) {
+                                                    font-size: 20px !important;
+                                                }
+                                            }
+                                            .question {
+                                                color: var(--text-primary);
+                                                text-transform: capitalize;
+                                                letter-spacing: 4px;
+                                                font-size: 24px;
+                                                font-weight: 800;
+                                            }
+                                            .icon {
+                                                .arrow {
+                                                    color: #acacac;
+                                                    transition-duration: 0.1s;
+
+                                                    transform: rotate(0deg);
+                                                }
+                                            }
+                                        }
+                                        &.part-bottom {
+                                            position: relative;
+                                            max-height: 0;
+                                            overflow: hidden;
+                                            transform: translateY(-5px);
+                                            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+                                            ol {
+                                                margin-bottom: 0 !important;
+                                            }
+
+                                            .item {
+                                                background-color: #ececec;
+                                                margin-block: 1.5rem;
+                                                padding: 20px;
+                                                height: max-content;
+                                                p {
+                                                    margin-bottom: 0 !important;
+                                                }
+
+                                                .row {
+                                                    .typeOfCourses {
+                                                        display: flex;
+                                                        h6 {
+                                                            $color-div: #2e295e;
+
+                                                            position: relative;
+                                                            padding: 8px 24px;
+                                                            border-radius: 50px;
+                                                            font-size: 22px;
+                                                            margin-bottom: 0 !important;
+                                                            cursor: pointer;
+                                                            border: 1px solid $color-div;
+                                                            transition-duration: 0.3s;
+                                                            overflow: hidden;
+                                                            color: #2e295e;
+                                                            span {
+                                                                position: relative;
+                                                                z-index: 5;
+                                                                transition-duration: 0.3s;
+                                                            }
+                                                            &::before,
+                                                            &::after {
+                                                                @include createElement($h: 100%, $w: 50%);
+                                                                @include position($t: 0);
+                                                                background-color: #2e295e;
+                                                                transition-duration: 0.3s;
+                                                            }
+                                                            &::before {
+                                                                left: -50%;
+                                                            }
+                                                            &::after {
+                                                                right: -50%;
+                                                            }
+                                                            &.active,
+                                                            &:hover {
+                                                                span {
+                                                                    color: #fff;
+                                                                }
+                                                                &::before {
+                                                                    left: 0%;
+                                                                }
+                                                                &::after {
+                                                                    right: 0%;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    .counter {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        ul {
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                                            padding: 0;
+                                                            margin-bottom: 0;
+                                                            li {
+                                                                $color-bg-and-text: #685ae6;
+
+                                                                @include flex;
+                                                                gap: 8px;
+                                                                padding: 10px 20px;
+                                                                margin-bottom: 8px;
+                                                                margin-right: 8px;
+                                                                border-radius: 50px;
+                                                                border: 2px solid $color-bg-and-text;
+                                                                transition-duration: 0.3s;
+                                                                cursor: pointer;
+                                                                opacity: 0;
+                                                                animation: slideUpItem 0.35s ease forwards;
+                                                                animation-delay: calc(var(--i, 0) * 0.05s);
+
+                                                                @include respond(350) {
+                                                                    gap: 6px;
+                                                                    padding: 8px 16px;
+                                                                    margin-bottom: 6px;
+                                                                    margin-right: 6px;
+                                                                }
+
+                                                                &:hover {
+                                                                    background-color: $color-bg-and-text;
+                                                                    .name-language {
+                                                                        color: #fff;
+                                                                    }
+                                                                }
+
+                                                                .img-language {
+                                                                    border-radius: 10px;
+                                                                    width: 30px;
+                                                                    @include flex;
+                                                                    img {
+                                                                        width: 90%;
+                                                                    }
+                                                                }
+                                                                .name-language {
+                                                                    font-size: 16px;
+                                                                    letter-spacing: 0.9px;
+                                                                    font-weight: 700;
+                                                                    color: $color-bg-and-text;
+                                                                }
+                                                            }
+                                                        }
+                                                        .travel-to-courses {
+                                                            width: max-content;
+                                                            border: 2px solid #2e295e;
+                                                            padding: 8px 24px;
+                                                            color: #2e295e;
+                                                            border-radius: 20px;
+                                                            margin-left: auto;
+                                                            transform: translateX(30px);
+                                                            opacity: 0;
+
+                                                            transition-duration: 0s;
+                                                            transition-property: all;
+
+                                                            &.active {
+                                                                transition-duration: 0.3s;
+                                                                transform: translateX(0);
+                                                                opacity: 1;
+                                                            }
+
+                                                            &.main-btn {
+                                                                position: relative;
+                                                                display: block;
+                                                                width: fit-content;
+                                                                text-decoration: none;
+                                                                padding: 8px 16px;
+                                                                overflow: hidden;
+                                                                border-radius: 1px;
+                                                                border: 2px solid #2e295e;
+                                                                letter-spacing: 1px;
+                                                                text-transform: uppercase;
+                                                                background-color: transparent;
+                                                                outline: none;
+
+                                                                &::before,
+                                                                &::after {
+                                                                    @include createElement($h: 25%);
+                                                                    @include position;
+                                                                    background-color: #2e295e;
+                                                                    transition:
+                                                                        all linear 0.5s 0.5s,
+                                                                        height linear 0.5s;
+                                                                }
+                                                                &::before {
+                                                                    top: 0%;
+                                                                    right: -100%;
+                                                                }
+                                                                &::after {
+                                                                    bottom: 0%;
+                                                                    left: -100%;
+                                                                }
+                                                                h6 {
+                                                                    position: relative;
+                                                                    z-index: 100;
+                                                                    color: #2e295e;
+                                                                    font-weight: 700;
+                                                                    font-size: 18px;
+                                                                    transition: color ease-out 0.5s 0.1s;
+                                                                    @include respond(350) {
+                                                                        font-size: 13px;
+                                                                    }
+                                                                    @include respond(450) {
+                                                                        font-size: 14px;
+                                                                    }
+                                                                }
+                                                                &:hover {
+                                                                    background-color: #2e295e;
+                                                                    transition: background linear 0.5s 0.5s;
+                                                                    &::before,
+                                                                    &::after {
+                                                                        height: 51%;
+                                                                        transition:
+                                                                            all linear 0.5s,
+                                                                            height linear 0.5s 0.5s;
+                                                                    }
+
+                                                                    &::before {
+                                                                        right: 0;
+                                                                    }
+                                                                    &::after {
+                                                                        left: 0;
+                                                                    }
+                                                                    h6 {
+                                                                        color: #fff;
+                                                                        transition: color ease-out 0.5s 0.7s;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            h6 {
+                                                                position: relative;
+                                                                z-index: 2100;
+                                                                font-size: 18px;
+                                                                letter-spacing: 0.5px;
+                                                                margin-bottom: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.active {
+                                        .part.part-top {
+                                            border-color: #2e295e;
+                                            .question {
+                                                color: #2e295e !important;
+                                            }
+                                            .icon {
+                                                .arrow {
+                                                    color: #2e295e;
+                                                    transform: rotate(90deg);
+                                                }
+                                            }
+                                        }
+                                        .part.part-bottom {
+                                            max-height: 600px;
+                                            @include respond(350) {
+                                                max-height: 800px;
+                                            }
+                                            @include respond(450) {
+                                                max-height: 650px;
+                                            }
+                                            @include respond(650) {
+                                                max-height: 600px;
+                                            }
+
+                                            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .SemiCode {
+                        font-weight: 700;
+                        font-size: 24px;
+                        color: #2e295e;
+                        font-family: "Agency FB Bold";
+                        letter-spacing: 1px;
+                    }
+                }
+                &.part-right {
+                    @include flex;
+                    .item {
+                        @include flex;
+                        width: 100%;
+
+                        transition:
+                            opacity 0.35s ease,
+                            transform 0.35s ease;
+                        transform: translateY(0);
+
+                        img {
+                            width: 80%;
+
+                            transition:
+                                opacity 0.35s ease,
+                                transform 0.35s ease;
+                            transform: translateY(0);
+
+                            &.fade-out {
+                                opacity: 0;
+                                transform: translateY(15px);
+                            }
+
+                            &.fade-in {
+                                animation: slideUp 0.35s ease forwards;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .animation-img-2 {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        @include respond(350) {
+            display: none;
+        }
+        img {
+            width: 50px;
+        }
+    }
+}
+
+@keyframes move-about {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
